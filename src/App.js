@@ -1,8 +1,11 @@
-import React, { Component, PureComponent } from "react";
-import { Provider, Consumer } from "AppContext";
+import React, { Component } from "react";
+import { Provider } from "AppContext";
 import axios from "axios";
 
+import { Form, Table } from "components";
 import { idCreator, API_URL } from "utils";
+
+import "./styles.scss";
 
 class App extends Component {
   state = {
@@ -48,37 +51,15 @@ class App extends Component {
   };
 
   render() {
+    const { venues, participants, addParticipant } = this.state;
     return (
       <Provider value={this.state}>
         <Form />
+        <Table venues={venues} participants={participants} />
+        <button onClick={() => addParticipant()} className="button">
+          Add Participant
+        </button>
       </Provider>
-    );
-  }
-}
-
-class Form extends PureComponent {
-  state = {
-    text: ""
-  };
-  render() {
-    return (
-      <Consumer>
-        {({ populateVenues }) => (
-          <form
-            onSubmit={e => {
-              e.preventDefault();
-              populateVenues(this.state.text);
-            }}
-          >
-            <input
-              type="text"
-              value={this.state.text}
-              onChange={e => this.setState({ text: e.target.value })}
-            />
-            <input type="submit" value="submit" />
-          </form>
-        )}
-      </Consumer>
     );
   }
 }
