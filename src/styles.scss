@@ -1,8 +1,49 @@
 html,
 body {
   font-size: 16px;
+  margin: 0;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  padding: 1em;
+}
+
+h1 {
+  margin: 0 0 1em 0;
 }
 
 .flex-container {
   display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+input[type="text"] {
+  border: 1px solid #cecece;
+  padding: 0.5em;
+  font-size: 1.125rem;
+}
+
+.button {
+  border: none;
+  font-size: 1em;
+  padding: 1em;
+  width: 200px;
+  border-radius: 25px;
+  background: #3c77e2;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }

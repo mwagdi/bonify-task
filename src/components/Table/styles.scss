@@ -1,0 +1,38 @@
+$border: #d8d8d8;
+
+.table {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 1em 0;
+
+  &__cell {
+    flex: 1;
+    padding: 0.5em;
+    border-left: 1px solid $border;
+    position: relative;
+
+    &--active {
+      background-color: rgba(159, 212, 97, 0.3);
+    }
+  }
+
+  &__row {
+    border-top: 1px solid $border;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}
+
+.venue {
+  text-align: center;
+
+  &__name {
+    color: #3c77e2;
+    text-decoration: underline;
+    font-size: 1.125em;
+    font-weight: bold;
+  }
+}

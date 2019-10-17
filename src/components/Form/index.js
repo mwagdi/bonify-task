@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Consumer } from "AppContext";
 
+import "./styles.scss";
 class Form extends PureComponent {
   state = {
     text: ""
@@ -22,7 +23,7 @@ class Form extends PureComponent {
               value={this.state.text}
               onChange={e => this.setState({ text: e.target.value })}
             />
-            <input className="form__submit" type="submit" value="submit" />
+            <input className="button" type="submit" value="Search" />
           </form>
         )}
       </Consumer>

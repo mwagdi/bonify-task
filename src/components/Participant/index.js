@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import { Consumer } from "AppContext";
 
+import "./styles.scss";
+
 export default ({ id }) => (
   <Consumer>
     {({ participants, editParticipant }) => {
@@ -9,6 +11,7 @@ export default ({ id }) => (
         <div className="table__row flex-container">
           <div className="table__cell">
             <input
+              className="table__input"
               type="text"
               value={name}
               onChange={e => editParticipant(id, "name", e.target.value)}
